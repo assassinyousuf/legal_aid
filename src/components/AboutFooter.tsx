@@ -17,7 +17,7 @@ export const About = () => {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1556157382-97dee2dcb70c?q=80&w=2070&auto=format&fit=crop" 
+                src="/legal_aid/images/audhara.png" 
                 alt="Law Student Audhara Afrin Oishi"
                 className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               />

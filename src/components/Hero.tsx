@@ -61,7 +61,7 @@ const Hero = () => {
           className="relative"
         >
           <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 aspect-[4/5] bg-gradient-to-br from-legal-blue to-black group">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-[url('/legal_aid/images/audhara.png')] bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-legal-bg-dark via-transparent to-transparent" />
             
             <div className="absolute bottom-8 left-8">
