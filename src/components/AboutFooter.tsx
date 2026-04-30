@@ -19,7 +19,7 @@ export const About = () => {
               <img 
                 src="/legal_aid/images/audhara.png" 
                 alt="Law Student Audhara Afrin Oishi"
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto transition-all duration-700"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-legal-gold rounded-xl z-0" />
