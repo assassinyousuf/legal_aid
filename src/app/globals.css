@@ -3,24 +3,54 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --legal-blue: #001F3F;
+  --legal-gold: #D4AF37;
+  --legal-gold-dark: #B8860B;
+  --legal-bg-dark: #000B1A;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-legal-blue: var(--legal-blue);
+  --color-legal-gold: var(--legal-gold);
+  --color-legal-gold-dark: var(--legal-gold-dark);
+  --color-legal-bg-dark: var(--legal-bg-dark);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000B1A;
+    --foreground: #F5F5F5;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
 }
