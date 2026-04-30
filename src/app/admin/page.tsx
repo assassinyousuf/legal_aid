@@ -12,14 +12,17 @@ import {
   CheckCircle,
   Clock,
   LayoutDashboard,
-  Shield
+  Shield,
+  X
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function AdminPage() {
   const { queries, updateQueryStatus } = useLegalData();
   const [searchTerm, setSearchTerm] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const filteredQueries = queries.filter(q => 
     q.message.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -27,9 +30,28 @@ export default function AdminPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex">
+    <div className="min-h-screen bg-[#F8FAFC] flex flex-col lg:flex-row">
+      {/* Mobile Header */}
+      <header className="lg:hidden bg-legal-blue p-4 flex justify-between items-center text-white">
+        <div className="flex items-center gap-2">
+          <Shield className="w-6 h-6 text-legal-gold" />
+          <span className="font-serif font-bold tracking-tight">OISHI <span className="text-legal-gold">ADMIN</span></span>
+        </div>
+        <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          <LayoutDashboard className="w-6 h-6" />
+        </button>
+      </header>
       {/* Sidebar */}
-      <aside className="w-64 bg-legal-blue text-white p-8 flex flex-col hidden lg:flex">
+      <aside className={cn(
+        "bg-legal-blue text-white p-8 flex flex-col transition-all duration-300 lg:w-64 lg:relative lg:flex",
+        isSidebarOpen ? "fixed inset-0 z-50 w-full" : "hidden"
+      )}>
+        <button 
+          className="lg:hidden absolute top-4 right-4 text-white/50"
+          onClick={() => setIsSidebarOpen(false)}
+        >
+          <X className="w-8 h-8" />
+        </button>
         <div className="flex items-center gap-3 mb-12">
           <Shield className="w-8 h-8 text-legal-gold" />
           <span className="text-xl font-serif font-bold tracking-tight">
